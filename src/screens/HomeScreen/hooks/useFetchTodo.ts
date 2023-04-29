@@ -11,7 +11,6 @@ export const useFetchTodo = () => {
     api
       .get<ProductType[]>('/products')
       .then(res => {
-        // console.log(res.data.length, 'alohaaa', Object.keys(res.data));
         setProduct(res.data);
       })
       .catch(e => {

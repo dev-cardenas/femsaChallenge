@@ -2,13 +2,16 @@ import React from 'react';
 import {View, Text} from 'react-native';
 import {useFetchTodo} from './hooks/useFetchTodo';
 import {HomeProps} from './models';
-import {Container} from '../../components/Container';
+import {AppText} from '../../components';
 
 export const HomeScreen = ({navigation}: HomeProps) => {
   const {loading, products} = useFetchTodo();
   return (
-    <Container>
-      <Text>Home</Text>
+    <View>
+      <AppText type="h3" bold>
+        Bienvenido de vuelta!
+      </AppText>
+      <AppText type="h4">Ruben Rodriguez</AppText>
       {products.slice(0, 3).map(product => {
         return (
           <View key={product.id}>
@@ -18,6 +21,6 @@ export const HomeScreen = ({navigation}: HomeProps) => {
           </View>
         );
       })}
-    </Container>
+    </View>
   );
 };

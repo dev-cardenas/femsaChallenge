@@ -4,4 +4,7 @@ import {AppColors} from '../../utils';
 export const Layout = styled.View`
   flex: 1;
   background-color: ${AppColors.background};
+  padding-top: 60px;
+  padding-left: 20px;
+  padding-right: 20px;
 `;
