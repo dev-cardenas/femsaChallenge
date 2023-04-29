@@ -2,16 +2,26 @@ import React from 'react';
 import {View, Text} from 'react-native';
 import {useFetchTodo} from './hooks/useFetchTodo';
 import {HomeProps} from './models';
-import {AppText} from '../../components';
+import {AppText, Layout} from '../../components';
+import {Point, Greeting} from './components';
+import {AppColors} from '../../utils';
 
 export const HomeScreen = ({navigation}: HomeProps) => {
   const {loading, products} = useFetchTodo();
   return (
-    <View>
-      <AppText type="h3" bold>
-        Bienvenido de vuelta!
+    <Layout>
+      <Greeting username="Ruben Rodriguez" />
+
+      <AppText type="h5" bold color={AppColors.gray}>
+        TUS PUNTOS
       </AppText>
-      <AppText type="h4">Ruben Rodriguez</AppText>
+
+      <Point />
+
+      <AppText type="h5" bold color={AppColors.gray}>
+        TUS MOVIMIENTOS
+      </AppText>
+
       {products.slice(0, 3).map(product => {
         return (
           <View key={product.id}>
@@ -21,6 +31,6 @@ export const HomeScreen = ({navigation}: HomeProps) => {
           </View>
         );
       })}
-    </View>
+    </Layout>
   );
 };

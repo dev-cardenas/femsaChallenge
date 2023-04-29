@@ -6,5 +6,8 @@ export const Text = styled.Text<TextStyledComponentProps>`
   font-size: ${({fontSize}) => fontSize};
   font-weight: ${({fontWeight}) => fontWeight};
   line-height: ${({lineHeight}) => lineHeight};
-  font-family: 'Avenir';
+  text-align: ${({align}) => align};
+  /* font-family: 'Avenir'; */
+  font-family: ${({fontWeight}) =>
+    fontWeight ? 'Avenir-Roman' : 'Avenir-Bold'};
 `;

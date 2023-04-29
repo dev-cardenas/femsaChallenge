@@ -8,6 +8,7 @@ export type lineHeightType =
   | '16px';
 export type fontWeightType = 400 | 800;
 export type textType = 'h1' | 'h2' | 'h3' | 'h4' | 'h5';
+export type alignType = 'left' | 'center' | 'right';
 
 export type fontStyleType = {
   fontSize: fontSizeType;
@@ -23,16 +24,19 @@ export type TextStyledComponentProps = {
   fontWeight: fontWeightType;
   fontSize: fontSizeType;
   lineHeight: lineHeightType;
+  align: alignType;
 };
 
 export type appTextType = {
   type?: textType;
   bold?: boolean;
   color?: string;
+  align?: alignType;
 };
 
 export type fontStyledGeneratorType = {
   type: textType;
   bold: boolean;
   color: string;
+  align: alignType;
 };

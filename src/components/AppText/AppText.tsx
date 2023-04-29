@@ -12,11 +12,13 @@ export const AppText = ({
   children,
   type = 'h4',
   bold = false,
+  align = 'left',
   color = AppColors.black,
 }: AppTextProps) => {
   const textStyles = fontStyledGenerator({
     type,
     bold,
+    align,
     color,
   });
   return <Text {...textStyles}>{children}</Text>;

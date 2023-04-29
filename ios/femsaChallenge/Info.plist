@@ -53,9 +53,9 @@
 	<false/>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Avenir-Bold.ttf</string>
 		<string>Avenir-Light.ttf</string>
 		<string>Avenir-Roman.ttf</string>
+		<string>Avenir-Bold.ttf</string>
 	</array>
 </dict>
 </plist>
