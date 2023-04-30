@@ -1,6 +1,7 @@
 import React from 'react';
 import {AppSvg, AppText} from '../../../../components';
 import {ProductType} from '../../../../models';
+import {formattedDate} from '../../../../utils';
 import {ContentItem, ContentImage, ContentInfo} from './ListProduct.styles';
 import {Point} from './Point';
 
@@ -19,7 +20,7 @@ export const ItemProduct: React.FC<IItemProduct> = ({product}) => {
         <AppText bold>
           {name.length >= 23 ? `${name.slice(0, 18)}...` : name}
         </AppText>
-        <AppText type="h6">{createdAt}</AppText>
+        <AppText type="h6">{formattedDate(createdAt)}</AppText>
       </ContentInfo>
       <Point points={points} is_redemption={is_redemption} />
     </ContentItem>

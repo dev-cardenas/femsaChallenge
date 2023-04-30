@@ -1,9 +1,14 @@
 import React from 'react';
-import {ContainerPoint, Box, ContentPoint} from './Point.styles';
 import {AppText} from '../../../../components';
-import {AppColors} from '../../../../utils';
+import {AppColors, PointFormat} from '../../../../utils';
+import {ContainerPoint, Box, ContentPoint} from './Point.styles';
 
-export const Point = () => {
+interface IPoint {
+  total: number;
+}
+
+export const Point = ({total}: IPoint) => {
+  const totalFormat = PointFormat.from(total, {symbol: ''});
   return (
     <ContainerPoint>
       <Box>
@@ -12,7 +17,7 @@ export const Point = () => {
         </AppText>
         <ContentPoint>
           <AppText bold align="center" type="h1" color={AppColors.white}>
-            10,00.00 pts
+            {`${totalFormat}`} pts
           </AppText>
         </ContentPoint>
       </Box>
