@@ -16,6 +16,7 @@ export const StyledFlatList = styled.FlatList`
 export const ContentList = styled.View`
   position: relative;
   min-height: 350px;
+  margin-bottom: 43px;
 `;
 
 export const Box = styled.View`

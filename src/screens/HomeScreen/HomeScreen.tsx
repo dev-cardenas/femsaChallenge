@@ -1,7 +1,6 @@
 import React from 'react';
 import {useFetchTodo} from './hooks/useFetchTodo';
-import {HomeProps} from './models';
-import {AppText, Layout} from '../../components';
+import {AppText, Layout, Button} from '../../components';
 import {Point, Greeting, ListProduct} from './components';
 import {AppColors} from '../../utils';
 
@@ -23,6 +22,8 @@ export const HomeScreen = () => {
       </AppText>
 
       <ListProduct products={products} />
+
+      <Button label="Todos" />
     </Layout>
   );
 };
