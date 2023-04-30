@@ -2,6 +2,12 @@ import styled from 'styled-components/native';
 import {FlatList} from 'react-native';
 import {AppColors} from '../../../../utils';
 
+export const Image = styled.Image`
+  width: 55px;
+  height: 55px;
+  border-radius: 10px;
+`;
+
 export const StyledFlatList = styled.FlatList`
   width: 353px;
   max-height: 350px;
