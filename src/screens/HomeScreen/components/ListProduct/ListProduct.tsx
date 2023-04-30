@@ -6,9 +6,10 @@ import {ItemProduct} from './ItemProduct';
 
 interface IListProduct {
   products: ProductType[];
+  handleEndReached: () => void;
 }
 
-export const ListProduct = ({products}: IListProduct) => {
+export const ListProduct = ({products, handleEndReached}: IListProduct) => {
   const renderItem: ListRenderItem<ProductType> = ({item}) => {
     return <ItemProduct product={item} />;
   };
@@ -22,6 +23,8 @@ export const ListProduct = ({products}: IListProduct) => {
         renderItem={renderItem}
         keyExtractor={keyExtractor}
         removeClippedSubviews={true}
+        onEndReached={handleEndReached}
+        onEndReachedThreshold={0.5}
       />
       <Box />
     </ContentList>

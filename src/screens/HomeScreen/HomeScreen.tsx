@@ -8,8 +8,14 @@ import {AppColors} from '../../utils';
 import {ContentButtons, ActivityContent} from './HomeScreen.styles';
 
 export const HomeScreen = () => {
-  const {loading, productToShow, total, selected, handleSelected} =
-    useFetchTodo();
+  const {
+    loading,
+    productToShow,
+    total,
+    selected,
+    handleSelected,
+    handleEndReached,
+  } = useFetchTodo();
 
   return (
     <Layout>
@@ -25,7 +31,10 @@ export const HomeScreen = () => {
         TUS MOVIMIENTOS
       </AppText>
 
-      <ListProduct products={productToShow} />
+      <ListProduct
+        products={productToShow}
+        handleEndReached={handleEndReached}
+      />
 
       {selected === options.ALL ? (
         <ContentButtons>

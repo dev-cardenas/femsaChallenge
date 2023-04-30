@@ -11,6 +11,7 @@ export const useFetchTodo = () => {
   const [selected, setSelected] = useState<optionsType>(options.ALL);
   const [productToShow, setProductToShow] = useState<ProductType[]>([]);
   const [total, setTotal] = useState<number>(0);
+  const [page, setPage] = useState(1);
 
   const [products, setProducts] = useState<productsToSelectType>({
     ALL: [],
@@ -35,10 +36,12 @@ export const useFetchTodo = () => {
 
   useEffect(() => {
     setLoading(true);
+
     api
       .get<ProductType[]>('/products')
       .then(res => {
         const {data} = res;
+        setProductToShow(data.slice(0, 10));
         handleResponse(data);
       })
       .catch(e => {
@@ -52,9 +55,29 @@ export const useFetchTodo = () => {
 
   const handleSelected = (typeSelected: optionsType) => {
     setSelected(typeSelected);
-    setProductToShow(products[typeSelected]);
+    setProductToShow(products[typeSelected].slice(0, 10));
     setTotal(totals[typeSelected]);
+    setPage(1);
   };
 
-  return {productToShow, loading, total, selected, handleSelected};
+  const handleEndReached = () => {
+    const newPage = page + 1;
+    setPage(newPage);
+    const init = page * 10;
+    const finish = newPage * 10;
+
+    setProductToShow([
+      ...productToShow,
+      ...products[selected].slice(init, finish),
+    ]);
+  };
+
+  return {
+    productToShow,
+    loading,
+    total,
+    selected,
+    handleSelected,
+    handleEndReached,
+  };
 };
