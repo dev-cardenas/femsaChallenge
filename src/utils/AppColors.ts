@@ -5,6 +5,7 @@ export enum AppColors {
   white = '#FFFFFF',
   black = '#020202',
   gray = '#9B9898',
+  grayLight = '#D0D0D0',
   success = '#00B833',
   error = '#FF0000',
   transparent = 'transparent',

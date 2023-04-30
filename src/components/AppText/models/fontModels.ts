@@ -7,7 +7,7 @@ export type lineHeightType =
   | '19px'
   | '16px';
 export type fontWeightType = 400 | 800;
-export type textType = 'h1' | 'h2' | 'h3' | 'h4' | 'h5';
+export type textType = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 export type alignType = 'left' | 'center' | 'right';
 
 export type fontStyleType = {

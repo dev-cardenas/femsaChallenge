@@ -10,7 +10,7 @@ type AppTextProps = appTextType & {
 
 export const AppText = ({
   children,
-  type = 'h4',
+  type = 'h5',
   bold = false,
   align = 'left',
   color = AppColors.black,

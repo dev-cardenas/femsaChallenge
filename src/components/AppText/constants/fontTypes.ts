@@ -20,7 +20,7 @@ export const fontTypes: fontTypeType = {
     fontSize: '14px',
     lineHeight: '19px',
   },
-  small: {
+  h6: {
     fontSize: '12px',
     lineHeight: '16px',
   },
