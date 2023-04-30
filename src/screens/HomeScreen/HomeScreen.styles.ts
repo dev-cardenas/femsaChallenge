@@ -1,5 +1,8 @@
 import styled from 'styled-components/native';
+import {Dimensions} from 'react-native';
 import {AppColors} from '../../utils';
+
+const windowWidth = Dimensions.get('window').width;
 
 export const ContentButtons = styled.View`
   flex-direction: row;
@@ -8,7 +11,7 @@ export const ContentButtons = styled.View`
 
 export const ActivityContent = styled.View`
   background-color: ${AppColors.background}90;
-  width: 100%;
+  width: ${windowWidth}px;
   height: 100%;
   justify-content: center;
   align-items: center;
