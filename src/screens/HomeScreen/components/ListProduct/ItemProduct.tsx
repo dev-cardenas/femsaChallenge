@@ -19,7 +19,9 @@ export const ItemProduct: React.FC<IItemProduct> = ({product}) => {
   const navigation = useNavigation<RootNavigationProps>();
   const {product: name, points, createdAt, is_redemption, image} = product;
   return (
-    <ContentItem onPress={() => navigation.navigate('Product', product)}>
+    <ContentItem
+      onPress={() => navigation.navigate('Product', product)}
+      test-testID="user-item-list">
       {image ? (
         <Image
           source={{

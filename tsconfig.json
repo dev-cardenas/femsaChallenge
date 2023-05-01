@@ -2,7 +2,15 @@
   "extends": "@tsconfig/react-native/tsconfig.json",
   "compilerOptions": {
     "types": [
+      "jest",
       "@types/styled-components-react-native"
     ]
-  }
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/assets/svg/svg.d.ts",
+    "__mocks__/react-native-svg.ts",
+    "jest/setupTest.tsx"
+  ],
 }

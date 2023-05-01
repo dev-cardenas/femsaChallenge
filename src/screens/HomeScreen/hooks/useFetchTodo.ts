@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react';
-import {api} from '../../../services/index';
+import {getProducts} from '../../../api/services';
 import {ProductType} from '../../../models';
 import {productsCache} from '../../../constants';
 import {productsToSelectType, totalToSelectType, optionsType} from '../models';
@@ -37,10 +37,8 @@ export const useFetchTodo = () => {
   useEffect(() => {
     setLoading(true);
 
-    api
-      .get<ProductType[]>('/products')
-      .then(res => {
-        const {data} = res;
+    getProducts()
+      .then(data => {
         setProductToShow(data.slice(0, 10));
         handleResponse(data);
       })
